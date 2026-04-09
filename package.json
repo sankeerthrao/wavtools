@@ -1,28 +1,37 @@
 {
   "name": "wavtools",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Record and stream WAV audio data in the browser across all platforms",
   "main": "index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/keithwhor/wavtools.git"
+    "url": "https://github.com/sankeerthrao/wavtools.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "npx tsc && npx esbuild index.js --bundle --outfile=script/wavtools.js --format=iife && npx esbuild index.js --bundle --minify --outfile=script/wavtools.min.js --format=iife"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "compile": "npx tsc && npx esbuild index.js --bundle --outfile=script/wavtools.js --format=iife && npx esbuild index.js --bundle --minify --outfile=script/wavtools.min.js --format=iife",
+    "lint": "npx eslint .",
+    "typecheck": "npx tsc --noEmit"
   },
   "keywords": [
     "Wavtools",
     "WAV",
     "Audio",
-    "Browser"
+    "Browser",
+    "PCM16",
+    "Recording",
+    "Streaming",
+    "WebAudio",
+    "AudioWorklet"
   ],
   "author": "Keith Horwoood <keithwhor@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.24.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.4"
   }
 }
